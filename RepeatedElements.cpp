@@ -1,0 +1,31 @@
+//Repeated elements:
+#include <iostream>
+#include <vector> 
+using namespace std;
+int main()
+{
+    int n,max=0;
+    cout<<"Enter the number of elements";
+    cin>>n;
+    vector<int>A(n);
+    cout<<"Enter the elements";
+    for(int i=0;i<n;i++)
+    {
+       cin>>A[i];
+       if(A[i]>max)
+        max=A[i];
+    }
+    
+    vector<int>DAT(max+1);
+    for(int k=0;k<n;k++)
+    {
+        DAT[A[k]]++;
+    }
+    cout<<"The repeated number is:"<<"\n";
+    for(int k=1;k<=max;k++)
+    {
+        if(DAT[k]>1)
+         cout<<(k);
+    }
+    return 0;
+}
